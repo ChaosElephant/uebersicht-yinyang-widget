@@ -28,10 +28,10 @@ style: """
           perspective: 140vmin;
   -webkit-perspective-origin: 50vw 50vh;
           perspective-origin: 50vw 50vh;
-  -webkit-animation-name: mgns;
-          animation-name: mgns;
-  -webkit-animation-duration: 300s;
-          animation-duration: 300s;
+  -webkit-animation-name: margins;
+          animation-name: margins;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
   -webkit-animation-timing-function: ease-in-out;
@@ -44,228 +44,212 @@ style: """
           animation-fill-mode: both; }
   #yinyang-output.b {
     animation-direction: alternate-reverse; }
+  #yinyang-output #yy-container,
+  #yinyang-output .yy-wrap,
+  #yinyang-output #yinyang {
+    -webkit-animation-name: spinnerZ;
+            animation-name: spinnerZ;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
+  #yinyang-output #yy-container {
+    height: 95vmin;
+    width: 95vmin;
+    position: relative;
+    -webkit-animation-duration: 40s;
+            animation-duration: 40s; }
+    #yinyang-output #yy-container .yy-wrap {
+      position: absolute;
+      left: 0px;
+      top: 0px; }
+    #yinyang-output #yy-container #wrap-y {
+      width: 85vmin;
+      height: 85vmin;
+      -webkit-animation-duration: 50s;
+              animation-duration: 50s; }
+    #yinyang-output #yy-container #wrap-x {
+      width: 75vmin;
+      height: 75vmin;
+      -webkit-animation-duration: 60s;
+              animation-duration: 60s; }
+    #yinyang-output #yy-container #wrap-z {
+      width: 65vmin;
+      height: 65vmin;
+      -webkit-animation-duration: 70s;
+              animation-duration: 70s; }
+  #yinyang-output #yinyang {
+    height: 20vmin;
+    width: 20vmin;
+    -webkit-animation-duration: 80s;
+            animation-duration: 80s; }
+    #yinyang-output #yinyang > div.yin,
+    #yinyang-output #yinyang > div.yang {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      opacity: 0.83; }
+    #yinyang-output #yinyang > div.yin {
+      -webkit-transform: rotateZ(0deg);
+          -ms-transform: rotate(0deg);
+              transform: rotateZ(0deg);
+      -webkit-animation: flipflap1 122s cubic-bezier(0.6, 0, 0, 1) infinite;
+              animation: flipflap1 122s cubic-bezier(0.6, 0, 0, 1) infinite; }
+    #yinyang-output #yinyang > div.yang {
+      -webkit-transform: rotateZ(-180deg);
+          -ms-transform: rotate(-180deg);
+              transform: rotateZ(-180deg);
+      -webkit-animation: flipflap2 122s cubic-bezier(0.6, 0, 0, 1) infinite;
+              animation: flipflap2 122s cubic-bezier(0.6, 0, 0, 1) infinite; }
 
-#yy-container {
-  height: 85vmin;
-  width: 85vmin;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: relative;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-animation-name: rotate;
-          animation-name: rotate;
-  -webkit-animation-duration: 601s;
-          animation-duration: 601s;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite; }
-  #yy-container #wrap-y {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0; }
-
-.yy-wrap {
-  width: 85vmin;
-  height: 85vmin;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite; }
-
-.yy-wrap#wrap-y {
-  -webkit-animation-duration: 180s;
-          animation-duration: 180s;
-  border-color: white;
-  -webkit-animation-name: spinnerY;
-          animation-name: spinnerY;
-  -webkit-animation-direction: forward;
-          animation-direction: forward; }
-
-#yinyang-output.b .yy-wrap#wrap-y {
-  -webkit-animation-direction: backward;
-          animation-direction: backward; }
-
-.yy-wrap#wrap-x {
-  -webkit-animation-duration: 180s;
-          animation-duration: 180s;
-  border-color: red;
-  -webkit-animation-name: spinnerX;
-          animation-name: spinnerX;
-  -webkit-animation-direction: forward;
-          animation-direction: forward; }
-
-#yinyang-output.b .yy-wrap#wrap-y {
-  -webkit-animation-direction: backward;
-          animation-direction: backward; }
-
-.yy-wrap#wrap-z {
-  -webkit-animation-duration: 180s;
-          animation-duration: 180s;
-  border-color: green;
-  -webkit-animation-name: spinnerZ;
-          animation-name: spinnerZ; }
-
-.yinyang {
-  height: 20vmin;
-  width: 20vmin;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-animation: spinnerY 71s linear infinite;
-          animation: spinnerY 71s linear infinite;
-  -webkit-animation-direction: forward;
-          animation-direction: forward; }
-  .yinyang > div.yin,
-  .yinyang > div.yang {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    opacity: 0.83; }
-  .yinyang > div.yin {
-    -webkit-transform: rotateZ(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotateZ(0deg);
-    -webkit-animation: flipflap1 122s cubic-bezier(0.6, 0, 0, 1) infinite;
-            animation: flipflap1 122s cubic-bezier(0.6, 0, 0, 1) infinite; }
-  .yinyang > div.yang {
-    -webkit-transform: rotateZ(-180deg);
-        -ms-transform: rotate(-180deg);
-            transform: rotateZ(-180deg);
-    -webkit-animation: flipflap2 122s cubic-bezier(0.6, 0, 0, 1) infinite;
-            animation: flipflap2 122s cubic-bezier(0.6, 0, 0, 1) infinite; }
-
-#yinyang-output.b .yinyang {
-  -webkit-animation-direction: backward;
-          animation-direction: backward; }
-
-.yy--1, .yy--2 {
+.yy--1,
+.yy--2 {
   position: absolute;
   left: 0;
   border-radius: 50%;
   overflow: hidden;
-  -webkit-animation: fw 8s linear infinite;
-          animation: fw 8s linear infinite; }
-
-.yy:before, .yy--1:before, .yy--2:before {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 50%;
-  height: 50%;
-  -webkit-clip-path: polygon(0 0, 25% 50%, 0 100%, 100% 100%, 100% 0);
-          clip-path: polygon(0 0, 25% 50%, 0 100%, 100% 100%, 100% 0); }
-
-.yy:after, .yy--1:after, .yy--2:after {
-  content: '';
-  display: block;
-  width: 20%;
-  height: 20%;
-  border-radius: 50%;
-  position: absolute;
-  left: 40%;
-  top: 15%; }
-
-.yy div:first-child, .yy--1 div:first-child, .yy--2 div:first-child {
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  right: 0;
-  top: 0;
-  overflow: hidden; }
-
-.yy div:first-child:before, .yy--1 div:first-child:before, .yy--2 div:first-child:before {
-  content: '';
-  display: block;
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-  border: 10vmin solid #000;
-  position: absolute;
-  left: -150%;
-  top: -100%; }
-
-.yy div:last-child, .yy--1 div:last-child, .yy--2 div:last-child {
-  position: absolute;
-  width: 20%;
-  height: 20%;
-  border-radius: 50%;
-  border: 3vmin solid #000;
-  bottom: 0;
-  left: 25%; }
-
-.yy, .yy--1, .yy--2 {
+  -webkit-animation: yyrotate 8s linear infinite;
+          animation: yyrotate 8s linear infinite;
   width: 100%;
   height: 100%; }
+  .yy--1:before, .yy--1:after,
+  .yy--2:before,
+  .yy--2:after {
+    -webkit-transition: background 4.5s ease-in-out;
+    -o-transition: background 4.5s ease-in-out;
+    transition: background 4.5s ease-in-out;
+    background: #FFF; }
+  .yy--1:before,
+  .yy--2:before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    -webkit-clip-path: polygon(0 0, 25% 50%, 0 100%, 100% 100%, 100% 0);
+            clip-path: polygon(0 0, 25% 50%, 0 100%, 100% 100%, 100% 0); }
+  .yy--1:after,
+  .yy--2:after {
+    content: '';
+    display: block;
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    position: absolute;
+    left: 40%;
+    top: 15%; }
+  .yy--1 div:first-child:before,
+  .yy--1 div:last-child,
+  .yy--2 div:first-child:before,
+  .yy--2 div:last-child {
+    -webkit-transition: border-color 4.5s ease-in-out;
+    -o-transition: border-color 4.5s ease-in-out;
+    transition: border-color 4.5s ease-in-out; }
+  .yy--1 div:first-child,
+  .yy--2 div:first-child {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    right: 0;
+    top: 0;
+    overflow: hidden; }
+    .yy--1 div:first-child:before,
+    .yy--2 div:first-child:before {
+      content: '';
+      display: block;
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      border: 10vmin solid #000;
+      position: absolute;
+      left: -150%;
+      top: -100%; }
+  .yy--1 div:last-child,
+  .yy--2 div:last-child {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    border: 3vmin solid #000;
+    bottom: 0;
+    left: 25%; }
 
-.yy--1:before, .yy--1:after, .yy--2:before, .yy--2:after {
-  -webkit-transition: background 4.5s ease-in-out;
-  -o-transition: background 4.5s ease-in-out;
-  transition: background 4.5s ease-in-out; }
-
-.yy--1 div:first-child:before, .yy--2 div:first-child:before, .yy--1 div:last-child, .yy--2 div:last-child {
-  -webkit-transition: border-color 4.5s ease-in-out;
-  -o-transition: border-color 4.5s ease-in-out;
-  transition: border-color 4.5s ease-in-out; }
-
-.yy--1:before, .yy--1:after {
-  background: #FFF; }
-
-.yy--1 div:first-child:before {
-  border-color: #FFF; }
-
+.yy--1 div:first-child:before,
 .yy--1 div:last-child {
   border-color: #FFF; }
 
 .yy--2:before, .yy--2:after {
   background: #000; }
 
-.yy--2 div:first-child:before {
-  border-color: #000; }
-
+.yy--2 div:first-child:before,
 .yy--2 div:last-child {
   border-color: #000; }
 
-.yy-wrap#wrap-x {
-  -webkit-animation-duration: 121s;
-          animation-duration: 121s; }
+@-webkit-keyframes yyrotate {
+  from {
+    -webkit-transform: rotateZ(0deg) translate3d(0, 0, 0);
+            transform: rotateZ(0deg) translate3d(0, 0, 0); }
+  to {
+    -webkit-transform: rotateZ(360deg) translate3d(0, 0, 0);
+            transform: rotateZ(360deg) translate3d(0, 0, 0); } }
 
-.yy-wrap#wrap-y {
-  -webkit-animation-duration: 291s;
-          animation-duration: 291s; }
+@keyframes yyrotate {
+  from {
+    -webkit-transform: rotateZ(0deg) translate3d(0, 0, 0);
+            transform: rotateZ(0deg) translate3d(0, 0, 0); }
+  to {
+    -webkit-transform: rotateZ(360deg) translate3d(0, 0, 0);
+            transform: rotateZ(360deg) translate3d(0, 0, 0); } }
 
-.yy-wrap#wrap-z {
-  -webkit-animation-duration: 499s;
-          animation-duration: 499s; }
+@-webkit-keyframes spinnerX {
+  from {
+    -webkit-transform: rotateX(0deg) rotateZ(0deg);
+            transform: rotateX(0deg) rotateZ(0deg); }
+  to {
+    -webkit-transform: rotateX(360deg) rotateZ(360deg);
+            transform: rotateX(360deg) rotateZ(360deg); } }
 
-@-webkit-keyframes mgns {
-  20% {
+@keyframes spinnerX {
+  from {
+    -webkit-transform: rotateX(0deg) rotateZ(0deg);
+            transform: rotateX(0deg) rotateZ(0deg); }
+  to {
+    -webkit-transform: rotateX(360deg) rotateZ(360deg);
+            transform: rotateX(360deg) rotateZ(360deg); } }
+
+@-webkit-keyframes spinnerZ {
+  from {
+    -webkit-transform: rotateX(-60deg) rotateZ(360deg) rotateY(-300deg);
+            transform: rotateX(-60deg) rotateZ(360deg) rotateY(-300deg); }
+  to {
+    -webkit-transform: rotateX(300deg) rotateZ(0deg) rotateY(60deg);
+            transform: rotateX(300deg) rotateZ(0deg) rotateY(60deg); } }
+
+@keyframes spinnerZ {
+  from {
+    -webkit-transform: rotateX(-60deg) rotateZ(360deg) rotateY(-300deg);
+            transform: rotateX(-60deg) rotateZ(360deg) rotateY(-300deg); }
+  to {
+    -webkit-transform: rotateX(300deg) rotateZ(0deg) rotateY(60deg);
+            transform: rotateX(300deg) rotateZ(0deg) rotateY(60deg); } }
+
+@-webkit-keyframes margins {
+  0% {
     margin-left: calc(50vmin - 50vw);
     margin-top: calc(50vmin - 50vh); }
-  80% {
+  100% {
     margin-left: calc(50vw - 50vmin);
     margin-top: calc(50vh - 50vmin); } }
 
-@keyframes mgns {
-  20% {
+@keyframes margins {
+  0% {
     margin-left: calc(50vmin - 50vw);
     margin-top: calc(50vmin - 50vh); }
-  80% {
+  100% {
     margin-left: calc(50vw - 50vmin);
     margin-top: calc(50vh - 50vmin); } }
 
@@ -313,70 +297,6 @@ style: """
     -webkit-transform: rotateY(315deg) rotateZ(-180deg);
             transform: rotateY(315deg) rotateZ(-180deg); } }
 
-@-webkit-keyframes fw {
-  from {
-    -webkit-transform: rotateZ(0deg) translate3d(0, 0, 0);
-            transform: rotateZ(0deg) translate3d(0, 0, 0); }
-  to {
-    -webkit-transform: rotateZ(360deg) translate3d(0, 0, 0);
-            transform: rotateZ(360deg) translate3d(0, 0, 0); } }
-
-@keyframes fw {
-  from {
-    -webkit-transform: rotateZ(0deg) translate3d(0, 0, 0);
-            transform: rotateZ(0deg) translate3d(0, 0, 0); }
-  to {
-    -webkit-transform: rotateZ(360deg) translate3d(0, 0, 0);
-            transform: rotateZ(360deg) translate3d(0, 0, 0); } }
-
-@-webkit-keyframes spinnerX {
-  from {
-    -webkit-transform: rotateX(0deg) rotateZ(0deg);
-            transform: rotateX(0deg) rotateZ(0deg); }
-  to {
-    -webkit-transform: rotateX(360deg) rotateZ(360deg);
-            transform: rotateX(360deg) rotateZ(360deg); } }
-
-@keyframes spinnerX {
-  from {
-    -webkit-transform: rotateX(0deg) rotateZ(0deg);
-            transform: rotateX(0deg) rotateZ(0deg); }
-  to {
-    -webkit-transform: rotateX(360deg) rotateZ(360deg);
-            transform: rotateX(360deg) rotateZ(360deg); } }
-
-@-webkit-keyframes spinnerY {
-  from {
-    -webkit-transform: rotateX(360deg) rotateY(0deg);
-            transform: rotateX(360deg) rotateY(0deg); }
-  to {
-    -webkit-transform: rotateX(0deg) rotateY(-360deg);
-            transform: rotateX(0deg) rotateY(-360deg); } }
-
-@keyframes spinnerY {
-  from {
-    -webkit-transform: rotateX(360deg) rotateY(0deg);
-            transform: rotateX(360deg) rotateY(0deg); }
-  to {
-    -webkit-transform: rotateX(0deg) rotateY(-360deg);
-            transform: rotateX(0deg) rotateY(-360deg); } }
-
-@-webkit-keyframes spinnerZ {
-  from {
-    -webkit-transform: rotateX(0deg) rotateZ(360deg) rotateY(0deg);
-            transform: rotateX(0deg) rotateZ(360deg) rotateY(0deg); }
-  to {
-    -webkit-transform: rotateX(360deg) rotateZ(0deg) rotateY(360deg);
-            transform: rotateX(360deg) rotateZ(0deg) rotateY(360deg); } }
-
-@keyframes spinnerZ {
-  from {
-    -webkit-transform: rotateX(0deg) rotateZ(360deg) rotateY(0deg);
-            transform: rotateX(0deg) rotateZ(360deg) rotateY(0deg); }
-  to {
-    -webkit-transform: rotateX(360deg) rotateZ(0deg) rotateY(360deg);
-            transform: rotateX(360deg) rotateZ(0deg) rotateY(360deg); } }
-
 
 """
 
@@ -384,10 +304,10 @@ render: (output) -> """
    <div id="yinyang-output">
    <div id="yy-style"></div>
    <div id="yy-container">
-		<div id="wrap-y" class="yy-wrap" data-rot="19">
-			<div id="wrap-x" class="yy-wrap" data-rot="252">
-				<div id="wrap-z" class="yy-wrap" data-rot="289">
-					<div class="yinyang">
+		<div id="wrap-y" class="yy-wrap">
+			<div id="wrap-x" class="yy-wrap">
+				<div id="wrap-z" class="yy-wrap">
+					<div id="yinyang">
 						<div class="yin">
 							<div class="yy--1">
 								<div></div>
@@ -411,4 +331,4 @@ render: (output) -> """
 
 update: (e, domEl) ->
 	
-  $(domEl).find('#yinyang-output').append('<script>!function(e,t){if("object"==typeof exports){var n=t();"object"==typeof module&&module&&module.exports&&(exports=module.exports=n),exports.randomColor=n}else"function"==typeof define&&define.amd?define([],t):e.randomColor=t()}(this,function(){var e=null,t={};s("monochrome",null,[[0,0],[100,0]]),s("red",[-26,18],[[20,100],[30,92],[40,89],[50,85],[60,78],[70,70],[80,60],[90,55],[100,50]]),s("orange",[18,46],[[20,100],[30,93],[40,88],[50,86],[60,85],[70,70],[100,70]]),s("yellow",[46,62],[[25,100],[40,94],[50,89],[60,86],[70,84],[80,82],[90,80],[100,75]]),s("green",[62,178],[[30,100],[40,90],[50,85],[60,81],[70,74],[80,64],[90,50],[100,40]]),s("blue",[178,257],[[20,100],[30,86],[40,80],[50,74],[60,60],[70,52],[80,44],[90,39],[100,35]]),s("purple",[257,282],[[20,100],[30,87],[40,79],[50,70],[60,65],[70,59],[80,52],[90,45],[100,42]]),s("pink",[282,334],[[20,100],[30,90],[40,86],[60,84],[80,80],[90,75],[100,73]]);var n=[],a=function(s){if(void 0!==(s=s||{}).seed&&null!==s.seed&&s.seed===parseInt(s.seed,10))e=s.seed;else if("string"==typeof s.seed)e=function(e){for(var t=0,n=0;n!==e.length&&!(t>=Number.MAX_SAFE_INTEGER);n++)t+=e.charCodeAt(n);return t}(s.seed);else{if(void 0!==s.seed&&null!==s.seed)throw new TypeError("The seed value must be an integer or string");e=null}var d,y;if(null!==s.count&&void 0!==s.count){for(var c=s.count,m=[],f=0;f<s.count;f++)n.push(!1);for(s.count=null;c>m.length;)e&&s.seed&&(s.seed+=1),m.push(a(s));return s.count=c,m}return function(e,t){switch(t.format){case"hsvArray":return e;case"hslArray":return u(e);case"hsl":var n=u(e);return"hsl("+n[0]+", "+n[1]+"%, "+n[2]+"%)";case"hsla":var a=u(e),r=t.alpha||Math.random();return"hsla("+a[0]+", "+a[1]+"%, "+a[2]+"%, "+r+")";case"rgbArray":return l(e);case"rgb":var o=l(e);return"rgb("+o.join(", ")+")";case"rgba":var s=l(e),r=t.alpha||Math.random();return"rgba("+s.join(", ")+", "+r+")";default:return function(e){var t=l(e);function n(e){var t=e.toString(16);return 1==t.length?"0"+t:t}return"#"+n(t[0])+n(t[1])+n(t[2])}(e)}}([d=function(e){if(n.length>0){var a=function(e){if(isNaN(e)){if("string"==typeof e)if(t[e]){var n=t[e];if(n.hueRange)return n.hueRange}else if(e.match(/^#?([0-9A-F]{3}|[0-9A-F]{6})$/i)){var a=i(e)[0];return r(a).hueRange}}else{var o=parseInt(e);if(o<360&&o>0)return r(e).hueRange}return[0,360]}(e.hue),s=o(a),l=(a[1]-a[0])/n.length,u=parseInt((s-a[0])/l);!0===n[u]?u=(u+2)%n.length:n[u]=!0;var d=(a[0]+u*l)%359,y=(a[0]+(u+1)*l)%359;return(s=o(a=[d,y]))<0&&(s=360+s),s}var a=function(e){if("number"==typeof parseInt(e)){var n=parseInt(e);if(n<360&&n>0)return[n,n]}if("string"==typeof e)if(t[e]){var a=t[e];if(a.hueRange)return a.hueRange}else if(e.match(/^#?([0-9A-F]{3}|[0-9A-F]{6})$/i)){var r=i(e)[0];return[r,r]}return[0,360]}(e.hue);return(s=o(a))<0&&(s=360+s),s}(s),y=function(e,t){if("monochrome"===t.hue)return 0;if("random"===t.luminosity)return o([0,100]);var n=function(e){return r(e).saturationRange}(e),a=n[0],s=n[1];switch(t.luminosity){case"bright":a=55;break;case"dark":a=s-10;break;case"light":s=55}return o([a,s])}(d,s),function(e,t,n){var a=function(e,t){for(var n=r(e).lowerBounds,a=0;a<n.length-1;a++){var o=n[a][0],s=n[a][1],l=n[a+1][0],i=n[a+1][1];if(t>=o&&t<=l){var u=(i-s)/(l-o),d=s-u*o;return u*t+d}}return 0}(e,t),s=100;switch(n.luminosity){case"dark":s=a+20;break;case"light":a=(s+a)/2;break;case"random":a=0,s=100}return o([a,s])}(d,y,s)],s)};function r(e){for(var n in e>=334&&e<=360&&(e-=360),t){var a=t[n];if(a.hueRange&&e>=a.hueRange[0]&&e<=a.hueRange[1])return t[n]}return"Color not found"}function o(t){if(null===e){var n=Math.random();return n+=.618033988749895,n%=1,Math.floor(t[0]+n*(t[1]+1-t[0]))}var a=t[1]||1,r=t[0]||0,o=(e=(9301*e+49297)%233280)/233280;return Math.floor(r+o*(a-r))}function s(e,n,a){var r=a[0][0],o=a[a.length-1][0],s=a[a.length-1][1],l=a[0][1];t[e]={hueRange:n,lowerBounds:a,saturationRange:[r,o],brightnessRange:[s,l]}}function l(e){var t=e[0];0===t&&(t=1),360===t&&(t=359),t/=360;var n=e[1]/100,a=e[2]/100,r=Math.floor(6*t),o=6*t-r,s=a*(1-n),l=a*(1-o*n),i=a*(1-(1-o)*n),u=256,d=256,y=256;switch(r){case 0:u=a,d=i,y=s;break;case 1:u=l,d=a,y=s;break;case 2:u=s,d=a,y=i;break;case 3:u=s,d=l,y=a;break;case 4:u=i,d=s,y=a;break;case 5:u=a,d=s,y=l}return[Math.floor(255*u),Math.floor(255*d),Math.floor(255*y)]}function i(e){e=3===(e=e.replace(/^#/,"")).length?e.replace(/(.)/g,"$1$1"):e;var t=parseInt(e.substr(0,2),16)/255,n=parseInt(e.substr(2,2),16)/255,a=parseInt(e.substr(4,2),16)/255,r=Math.max(t,n,a),o=r-Math.min(t,n,a),s=r?o/r:0;switch(r){case t:return[(n-a)/o%6*60||0,s,r];case n:return[60*((a-t)/o+2)||0,s,r];case a:return[60*((t-n)/o+4)||0,s,r]}}function u(e){var t=e[0],n=e[1]/100,a=e[2]/100,r=(2-n)*a;return[t,Math.round(n*a/(r<1?r:2-r)*1e4)/100,r/2*100]}return a}),function(){var e=!1,t=["a","b"],n=[3,9],a=[280,350],r=[71,95],o=[162,280],s=[141,172],l=[187,245],i=h(r[0],r[1]),u=h(o[0],o[1]),d=h(o[0],o[1]),y=h(1.5*o[0],1.5*o[1]),c=h(s[0],s[1]),m=h(l[0],l[1]),f=h(a[0],a[1]);function h(e,t){return Math.floor(Math.random()*(t-e+1))+e}document.getElementById("yinyang-output").classList.add(t[Math.floor(Math.random()*t.length)]),document.getElementById("yinyang-output").style.animationDuration=f+"s",document.getElementById("yy-container").style.animationDuration=m+"s",document.getElementById("wrap-x").style.animationDuration=u+"s",document.getElementById("wrap-y").style.animationDuration=d+"s",document.getElementById("wrap-z").style.animationDuration=y+"s",document.getElementsByClassName("yinyang")[0].style.animationDuration=i+"s",document.getElementsByClassName("yin")[0].style.animationDuration=c+"s",document.getElementsByClassName("yang")[0].style.animationDuration=c+"s",document.getElementById("yinyang-output").style.animationDelay=-Math.abs(h(1,.9*f))+"s",document.getElementById("yy-container").style.animationDelay=-Math.abs(h(1,.9*m))+"s",document.getElementById("wrap-x").style.animationDelay=-Math.abs(h(1,.9*u))+"s",document.getElementById("wrap-y").style.animationDelay=-Math.abs(h(1,.9*d))+"s",document.getElementById("wrap-z").style.animationDelay=-Math.abs(h(1,.9*y))+"s",document.getElementsByClassName("yinyang")[0].style.animationDelay=-Math.abs(h(1,.9*i))+"s",document.getElementsByClassName("yin")[0].style.animationDelay=-Math.abs(h(1,.9*c))+"s",document.getElementsByClassName("yang")[0].style.animationDelay=-Math.abs(h(1,.9*c))+"s",function t(a){a=a||Math.floor(6001*Math.random()+6e3);var r=["fade8500","fade6000","fade4500","fade1500","fade3000"],o=r[Math.floor(Math.random()*r.length)],s=parseInt(o.replace("fade","")),l=e?0:1,i=e?1:0;h(n[0],n[1]),h(n[0],n[1]);e=!e;var u=[randomColor({luminosity:"light",hue:"monochrome"}),randomColor({luminosity:"dark",hue:"random"})];setTimeout(function(){var e=document.getElementsByClassName("yy-new");void 0!==e&&e.length&&Array.from(e).forEach(e=>{e.className="yy-old"});var n=document.createElement("style");n.setAttribute("class","yy-new"),n.textContent=".yy--2.fade:before,.yy--2.fade:after {background: "+u[l]+";}.yy--2.fade div:first-child:before {border-color: "+u[l]+";}.yy--2.fade div:last-child {border-color: "+u[l]+";}.yy--1.fade:before,.yy--1.fade:after {background: "+u[i]+";}.yy--1.fade div:first-child:before {border-color: "+u[i]+";}.yy--1.fade div:last-child {border-color: "+u[i]+";}",document.getElementById("yy-style").appendChild(n),document.getElementsByClassName("yy--1")[0].classList.add("fade"),document.getElementsByClassName("yy--2")[0].classList.add("fade"),setTimeout(function(){var e=document.createElement("style");e.setAttribute("class","yy-new"),e.textContent=".yy--2:before,.yy--2:after {background: "+u[l]+";}.yy--2 div:first-child:before {border-color: "+u[l]+";}.yy--2 div:last-child {border-color: "+u[l]+";}.yy--1:before,.yy--1:after {background: "+u[i]+";}.yy--1 div:first-child:before {border-color: "+u[i]+";}.yy--1 div:last-child {border-color: "+u[i]+";}",document.getElementById("yy-style").appendChild(e),document.getElementsByClassName("yy--1")[0].classList.remove("fade"),document.getElementsByClassName("yy--2")[0].classList.remove("fade");var n=document.getElementsByClassName("yy-old");void 0!==n&&n.length&&Array.from(n).forEach(e=>{e.parentNode.removeChild(e)}),t()},s+1e3)},a)}(1)}(window,document);</script>');
+  $(domEl).find('#yinyang-output').append('<script>!function(e,t){if("object"==typeof exports){var r=t();"object"==typeof module&&module&&module.exports&&(exports=module.exports=r),exports.randomColor=r}else"function"==typeof define&&define.amd?define([],t):e.randomColor=t()}(this,function(){var e=null,t={};s("monochrome",null,[[0,0],[100,0]]),s("red",[-26,18],[[20,100],[30,92],[40,89],[50,85],[60,78],[70,70],[80,60],[90,55],[100,50]]),s("orange",[18,46],[[20,100],[30,93],[40,88],[50,86],[60,85],[70,70],[100,70]]),s("yellow",[46,62],[[25,100],[40,94],[50,89],[60,86],[70,84],[80,82],[90,80],[100,75]]),s("green",[62,178],[[30,100],[40,90],[50,85],[60,81],[70,74],[80,64],[90,50],[100,40]]),s("blue",[178,257],[[20,100],[30,86],[40,80],[50,74],[60,60],[70,52],[80,44],[90,39],[100,35]]),s("purple",[257,282],[[20,100],[30,87],[40,79],[50,70],[60,65],[70,59],[80,52],[90,45],[100,42]]),s("pink",[282,334],[[20,100],[30,90],[40,86],[60,84],[80,80],[90,75],[100,73]]);var r=[],n=function(s){if(void 0!==(s=s||{}).seed&&null!==s.seed&&s.seed===parseInt(s.seed,10))e=s.seed;else if("string"==typeof s.seed)e=function(e){for(var t=0,r=0;r!==e.length&&!(t>=Number.MAX_SAFE_INTEGER);r++)t+=e.charCodeAt(r);return t}(s.seed);else{if(void 0!==s.seed&&null!==s.seed)throw new TypeError("The seed value must be an integer or string");e=null}var d,y;if(null!==s.count&&void 0!==s.count){for(var c=s.count,f=[],m=0;m<s.count;m++)r.push(!1);for(s.count=null;c>f.length;)e&&s.seed&&(s.seed+=1),f.push(n(s));return s.count=c,f}return function(e,t){switch(t.format){case"hsvArray":return e;case"hslArray":return l(e);case"hsl":var r=l(e);return"hsl("+r[0]+", "+r[1]+"%, "+r[2]+"%)";case"hsla":var n=l(e),a=t.alpha||Math.random();return"hsla("+n[0]+", "+n[1]+"%, "+n[2]+"%, "+a+")";case"rgbArray":return u(e);case"rgb":var o=u(e);return"rgb("+o.join(", ")+")";case"rgba":var s=u(e),a=t.alpha||Math.random();return"rgba("+s.join(", ")+", "+a+")";default:return function(e){var t=u(e);function r(e){var t=e.toString(16);return 1==t.length?"0"+t:t}return"#"+r(t[0])+r(t[1])+r(t[2])}(e)}}([d=function(e){if(r.length>0){var n=function(e){if(isNaN(e)){if("string"==typeof e)if(t[e]){var r=t[e];if(r.hueRange)return r.hueRange}else if(e.match(/^#?([0-9A-F]{3}|[0-9A-F]{6})$/i)){var n=i(e)[0];return a(n).hueRange}}else{var o=parseInt(e);if(o<360&&o>0)return a(e).hueRange}return[0,360]}(e.hue),s=o(n),u=(n[1]-n[0])/r.length,l=parseInt((s-n[0])/u);!0===r[l]?l=(l+2)%r.length:r[l]=!0;var d=(n[0]+l*u)%359,y=(n[0]+(l+1)*u)%359;return(s=o(n=[d,y]))<0&&(s=360+s),s}var n=function(e){if("number"==typeof parseInt(e)){var r=parseInt(e);if(r<360&&r>0)return[r,r]}if("string"==typeof e)if(t[e]){var n=t[e];if(n.hueRange)return n.hueRange}else if(e.match(/^#?([0-9A-F]{3}|[0-9A-F]{6})$/i)){var a=i(e)[0];return[a,a]}return[0,360]}(e.hue);return(s=o(n))<0&&(s=360+s),s}(s),y=function(e,t){if("monochrome"===t.hue)return 0;if("random"===t.luminosity)return o([0,100]);var r=function(e){return a(e).saturationRange}(e),n=r[0],s=r[1];switch(t.luminosity){case"bright":n=55;break;case"dark":n=s-10;break;case"light":s=55}return o([n,s])}(d,s),function(e,t,r){var n=function(e,t){for(var r=a(e).lowerBounds,n=0;n<r.length-1;n++){var o=r[n][0],s=r[n][1],u=r[n+1][0],i=r[n+1][1];if(t>=o&&t<=u){var l=(i-s)/(u-o),d=s-l*o;return l*t+d}}return 0}(e,t),s=100;switch(r.luminosity){case"dark":s=n+20;break;case"light":n=(s+n)/2;break;case"random":n=0,s=100}return o([n,s])}(d,y,s)],s)};function a(e){for(var r in e>=334&&e<=360&&(e-=360),t){var n=t[r];if(n.hueRange&&e>=n.hueRange[0]&&e<=n.hueRange[1])return t[r]}return"Color not found"}function o(t){if(null===e){var r=Math.random();return r+=.618033988749895,r%=1,Math.floor(t[0]+r*(t[1]+1-t[0]))}var n=t[1]||1,a=t[0]||0,o=(e=(9301*e+49297)%233280)/233280;return Math.floor(a+o*(n-a))}function s(e,r,n){var a=n[0][0],o=n[n.length-1][0],s=n[n.length-1][1],u=n[0][1];t[e]={hueRange:r,lowerBounds:n,saturationRange:[a,o],brightnessRange:[s,u]}}function u(e){var t=e[0];0===t&&(t=1),360===t&&(t=359),t/=360;var r=e[1]/100,n=e[2]/100,a=Math.floor(6*t),o=6*t-a,s=n*(1-r),u=n*(1-o*r),i=n*(1-(1-o)*r),l=256,d=256,y=256;switch(a){case 0:l=n,d=i,y=s;break;case 1:l=u,d=n,y=s;break;case 2:l=s,d=n,y=i;break;case 3:l=s,d=u,y=n;break;case 4:l=i,d=s,y=n;break;case 5:l=n,d=s,y=u}return[Math.floor(255*l),Math.floor(255*d),Math.floor(255*y)]}function i(e){e=3===(e=e.replace(/^#/,"")).length?e.replace(/(.)/g,"$1$1"):e;var t=parseInt(e.substr(0,2),16)/255,r=parseInt(e.substr(2,2),16)/255,n=parseInt(e.substr(4,2),16)/255,a=Math.max(t,r,n),o=a-Math.min(t,r,n),s=a?o/a:0;switch(a){case t:return[(r-n)/o%6*60||0,s,a];case r:return[60*((n-t)/o+2)||0,s,a];case n:return[60*((t-r)/o+4)||0,s,a]}}function l(e){var t=e[0],r=e[1]/100,n=e[2]/100,a=(2-r)*n;return[t,Math.round(r*n/(a<1?a:2-a)*1e4)/100,a/2*100]}return n}),function(){var e=!1,t=[3,9],r=function(e){var t,r,n=e.length;for(;0!==n;)r=Math.floor(Math.random()*n),t=e[n-=1],e[n]=e[r],e[r]=t;return e}([n(31,60),n(61,90),n(91,120),n(121,150),n(151,180),n(181,210)]);function n(e,t){return Math.floor(Math.random()*(t-e+1))+e}document.getElementById("yinyang-output").style.animationDuration=r[0]+"s",document.getElementById("yy-container").style.animationDuration=r[1]+"s",document.getElementById("wrap-x").style.animationDuration=r[2]+"s",document.getElementById("wrap-y").style.animationDuration=r[3]+"s",document.getElementById("wrap-z").style.animationDuration=r[4]+"s",document.getElementById("yinyang").style.animationDuration=r[5]+"s",document.getElementById("yinyang-output").style.animationDelay=-Math.abs(n(1,r[0]))+"s",document.getElementById("yy-container").style.animationDelay=-Math.abs(n(1,r[1]))+"s",document.getElementById("wrap-x").style.animationDelay=-Math.abs(n(1,r[2]))+"s",document.getElementById("wrap-y").style.animationDelay=-Math.abs(n(1,r[3]))+"s",document.getElementById("wrap-z").style.animationDelay=-Math.abs(n(1,r[4]))+"s",document.getElementById("yinyang").style.animationDelay=-Math.abs(n(1,r[5]))+"s",function r(a){a=a||Math.floor(6001*Math.random()+6e3);var o=["fade8500","fade6000","fade4500","fade1500","fade3000"],s=o[Math.floor(Math.random()*o.length)],u=parseInt(s.replace("fade","")),i=e?0:1,l=e?1:0;n(t[0],t[1]),n(t[0],t[1]);e=!e;var d=[randomColor({luminosity:"light",hue:"monochrome"}),randomColor({luminosity:"dark",hue:"random"})];setTimeout(function(){var e=document.getElementsByClassName("yy-new");void 0!==e&&e.length&&Array.from(e).forEach(e=>{e.className="yy-old"});var t=document.createElement("style");t.setAttribute("class","yy-new"),t.textContent=".yy--2.fade:before,.yy--2.fade:after {background: "+d[i]+";}.yy--2.fade div:first-child:before {border-color: "+d[i]+";}.yy--2.fade div:last-child {border-color: "+d[i]+";}.yy--1.fade:before,.yy--1.fade:after {background: "+d[l]+";}.yy--1.fade div:first-child:before {border-color: "+d[l]+";}.yy--1.fade div:last-child {border-color: "+d[l]+";}",document.getElementById("yy-style").appendChild(t),document.getElementsByClassName("yy--1")[0].classList.add("fade"),document.getElementsByClassName("yy--2")[0].classList.add("fade"),setTimeout(function(){var e=document.createElement("style");e.setAttribute("class","yy-new"),e.textContent=".yy--2:before,.yy--2:after {background: "+d[i]+";}.yy--2 div:first-child:before {border-color: "+d[i]+";}.yy--2 div:last-child {border-color: "+d[i]+";}.yy--1:before,.yy--1:after {background: "+d[l]+";}.yy--1 div:first-child:before {border-color: "+d[l]+";}.yy--1 div:last-child {border-color: "+d[l]+";}",document.getElementById("yy-style").appendChild(e),document.getElementsByClassName("yy--1")[0].classList.remove("fade"),document.getElementsByClassName("yy--2")[0].classList.remove("fade");var t=document.getElementsByClassName("yy-old");void 0!==t&&t.length&&Array.from(t).forEach(e=>{e.parentNode.removeChild(e)}),r()},u+1e3)},a)}(1)}(window,document);</script>');
