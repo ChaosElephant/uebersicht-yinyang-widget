@@ -27,8 +27,8 @@ style: """
           justify-content: center;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-perspective: 80vmin;
-          perspective: 80vmin;
+  -webkit-perspective: 90vmin;
+          perspective: 90vmin;
   -webkit-perspective-origin: 50vw 50vh;
           perspective-origin: 50vw 50vh;
   -webkit-animation-name: margins;
@@ -252,19 +252,19 @@ style: """
 
 @-webkit-keyframes spinnerZscale {
   from {
-    -webkit-transform: rotateX(-60deg) rotateZ(360deg) rotateY(-300deg) scale3d(0.6, 0.6, 0.6);
-            transform: rotateX(-60deg) rotateZ(360deg) rotateY(-300deg) scale3d(0.6, 0.6, 0.6); }
+    -webkit-transform: rotateX(-60deg) rotateZ(360deg) rotateY(-300deg) scale3d(0.5, 0.5, 0.5);
+            transform: rotateX(-60deg) rotateZ(360deg) rotateY(-300deg) scale3d(0.5, 0.5, 0.5); }
   to {
-    -webkit-transform: rotateX(300deg) rotateZ(0deg) rotateY(60deg) scale3d(0.6, 0.6, 0.6);
-            transform: rotateX(300deg) rotateZ(0deg) rotateY(60deg) scale3d(0.6, 0.6, 0.6); } }
+    -webkit-transform: rotateX(300deg) rotateZ(0deg) rotateY(60deg) scale3d(0.5, 0.5, 0.5);
+            transform: rotateX(300deg) rotateZ(0deg) rotateY(60deg) scale3d(0.5, 0.5, 0.5); } }
 
 @keyframes spinnerZscale {
   from {
-    -webkit-transform: rotateX(-60deg) rotateZ(360deg) rotateY(-300deg) scale3d(0.6, 0.6, 0.6);
-            transform: rotateX(-60deg) rotateZ(360deg) rotateY(-300deg) scale3d(0.6, 0.6, 0.6); }
+    -webkit-transform: rotateX(-60deg) rotateZ(360deg) rotateY(-300deg) scale3d(0.5, 0.5, 0.5);
+            transform: rotateX(-60deg) rotateZ(360deg) rotateY(-300deg) scale3d(0.5, 0.5, 0.5); }
   to {
-    -webkit-transform: rotateX(300deg) rotateZ(0deg) rotateY(60deg) scale3d(0.6, 0.6, 0.6);
-            transform: rotateX(300deg) rotateZ(0deg) rotateY(60deg) scale3d(0.6, 0.6, 0.6); } }
+    -webkit-transform: rotateX(300deg) rotateZ(0deg) rotateY(60deg) scale3d(0.5, 0.5, 0.5);
+            transform: rotateX(300deg) rotateZ(0deg) rotateY(60deg) scale3d(0.5, 0.5, 0.5); } }
 
 @-webkit-keyframes margins {
   0% {
