@@ -139,14 +139,6 @@ style: """
   -o-transition: all 5.5s ease-in-out;
   transition: all 5.5s ease-in-out; }
 
-#yinyang #yin > div > div,
-#yinyang #yin > div::after {
-  background: rgba(10, 10, 10, 0.8); }
-
-#yinyang #yang > div > div,
-#yinyang #yang > div::after {
-  background: rgba(240, 240, 240, 0.8); }
-
 #yinyang #yin > div::after,
 #yinyang #yang > div::after {
   width: 80px;
@@ -154,21 +146,49 @@ style: """
   border-radius: 40px;
   left: 160px; }
 
-#yinyang #yin.yin,
-#yinyang #yang.yin {
+#yinyang #yin {
   -webkit-filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.7));
           filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.7)); }
+  #yinyang #yin > div::after {
+    bottom: 60px; }
+  #yinyang #yin > div > div, #yinyang #yin > div::after {
+    background: rgba(10, 10, 10, 0.8); }
+  #yinyang #yin.a > div > div, #yinyang #yin.a > div::after {
+    background: rgba(75, 24, 24, 0.8); }
+  #yinyang #yin.b > div > div, #yinyang #yin.b > div::after {
+    background: rgba(66, 88, 59, 0.8); }
+  #yinyang #yin.c > div > div, #yinyang #yin.c > div::after {
+    background: rgba(29, 56, 58, 0.8); }
+  #yinyang #yin.d > div > div, #yinyang #yin.d > div::after {
+    background: rgba(88, 85, 35, 0.8); }
+  #yinyang #yin.e > div > div, #yinyang #yin.e > div::after {
+    background: rgba(33, 65, 58, 0.8); }
+  #yinyang #yin.f > div > div, #yinyang #yin.f > div::after {
+    background: rgba(41, 41, 41, 0.8); }
+  #yinyang #yin.g > div > div, #yinyang #yin.g > div::after {
+    background: rgba(51, 16, 16, 0.8); }
 
-#yinyang #yin.yang,
-#yinyang #yang.yang {
+#yinyang #yang {
   -webkit-filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.7));
           filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.7)); }
-
-#yinyang #yin > div::after {
-  bottom: 60px; }
-
-#yinyang #yang > div::after {
-  top: 60px; }
+  #yinyang #yang > div::after {
+    top: 60px; }
+  #yinyang #yang > div > div, #yinyang #yang > div::after {
+    background: rgba(245, 245, 245, 0.8); }
+  #yinyang #yang.a > div > div, #yinyang #yang.a > div::after {
+    background: rgba(232, 0, 0, 0.8); }
+  #yinyang #yang.b > div > div, #yinyang #yang.b > div::after {
+    background: rgba(115, 232, 78, 0.8); }
+  #yinyang #yang.c > div > div, #yinyang #yang.c > div::after {
+    background: rgba(43, 182, 192, 0.8); }
+  #yinyang #yang.d > div > div, #yinyang #yang.d > div::after {
+    background: rgba(209, 196, 15, 0.8); }
+  #yinyang #yang.e > div > div, #yinyang #yang.e > div::after {
+    background: rgba(81, 236, 203, 0.8); }
+  #yinyang #yang.f > div > div, #yinyang #yang.f > div::after {
+    background: rgba(196, 202, 201, 0.8); }
+  #yinyang #yang.g > div > div, #yinyang #yang.g > div::after {
+    background: rgba(202, 146, 73, 0.8); }
 
 #yinyang .head {
   width: 100px;
@@ -335,13 +355,13 @@ render: (output) -> """
 			<div id="wrap-x" class="yy-wrap">
 				<div id="wrap-z" class="yy-wrap">
 					<div id="yinyang">
-						<div id="yin" class="yin">
+						<div id="yin">
 							<div>
 								<div class="head"></div>
 								<div class="tail"></div>
 							</div>
 						</div>
-						<div id="yang" class="yang">
+						<div id="yang">
 							<div>
 								<div class="tail"></div>
 								<div class="head"></div>
@@ -357,4 +377,4 @@ render: (output) -> """
 
 update: (e, domEl) ->
 	
-  $(domEl).find('#yinyang-output').append('<script>!function(e,n){if("object"==typeof exports){var r=n();"object"==typeof module&&module&&module.exports&&(exports=module.exports=r),exports.randomColor=r}else"function"==typeof define&&define.amd?define([],n):e.randomColor=n()}(this,function(){var e=null,n={};u("monochrome",null,[[0,0],[100,0]]),u("red",[-26,18],[[20,100],[30,92],[40,89],[50,85],[60,78],[70,70],[80,60],[90,55],[100,50]]),u("orange",[18,46],[[20,100],[30,93],[40,88],[50,86],[60,85],[70,70],[100,70]]),u("yellow",[46,62],[[25,100],[40,94],[50,89],[60,86],[70,84],[80,82],[90,80],[100,75]]),u("green",[62,178],[[30,100],[40,90],[50,85],[60,81],[70,74],[80,64],[90,50],[100,40]]),u("blue",[178,257],[[20,100],[30,86],[40,80],[50,74],[60,60],[70,52],[80,44],[90,39],[100,35]]),u("purple",[257,282],[[20,100],[30,87],[40,79],[50,70],[60,65],[70,59],[80,52],[90,45],[100,42]]),u("pink",[282,334],[[20,100],[30,90],[40,86],[60,84],[80,80],[90,75],[100,73]]);var r=[],t=function(u){if(void 0!==(u=u||{}).seed&&null!==u.seed&&u.seed===parseInt(u.seed,10))e=u.seed;else if("string"==typeof u.seed)e=function(e){for(var n=0,r=0;r!==e.length&&!(n>=Number.MAX_SAFE_INTEGER);r++)n+=e.charCodeAt(r);return n}(u.seed);else{if(void 0!==u.seed&&null!==u.seed)throw new TypeError("The seed value must be an integer or string");e=null}var c,f;if(null!==u.count&&void 0!==u.count){for(var h=u.count,d=[],y=0;y<u.count;y++)r.push(!1);for(u.count=null;h>d.length;)e&&u.seed&&(u.seed+=1),d.push(t(u));return u.count=h,d}return function(e,n){switch(n.format){case"hsvArray":return e;case"hslArray":return l(e);case"hsl":var r=l(e);return"hsl("+r[0]+", "+r[1]+"%, "+r[2]+"%)";case"hsla":var t=l(e),a=n.alpha||Math.random();return"hsla("+t[0]+", "+t[1]+"%, "+t[2]+"%, "+a+")";case"rgbArray":return i(e);case"rgb":var o=i(e);return"rgb("+o.join(", ")+")";case"rgba":var u=i(e),a=n.alpha||Math.random();return"rgba("+u.join(", ")+", "+a+")";default:return function(e){var n=i(e);function r(e){var n=e.toString(16);return 1==n.length?"0"+n:n}return"#"+r(n[0])+r(n[1])+r(n[2])}(e)}}([c=function(e){if(r.length>0){var t=function(e){if(isNaN(e)){if("string"==typeof e)if(n[e]){var r=n[e];if(r.hueRange)return r.hueRange}else if(e.match(/^#?([0-9A-F]{3}|[0-9A-F]{6})$/i)){var t=s(e)[0];return a(t).hueRange}}else{var o=parseInt(e);if(o<360&&o>0)return a(e).hueRange}return[0,360]}(e.hue),u=o(t),i=(t[1]-t[0])/r.length,l=parseInt((u-t[0])/i);!0===r[l]?l=(l+2)%r.length:r[l]=!0;var c=(t[0]+l*i)%359,f=(t[0]+(l+1)*i)%359;return(u=o(t=[c,f]))<0&&(u=360+u),u}var t=function(e){if("number"==typeof parseInt(e)){var r=parseInt(e);if(r<360&&r>0)return[r,r]}if("string"==typeof e)if(n[e]){var t=n[e];if(t.hueRange)return t.hueRange}else if(e.match(/^#?([0-9A-F]{3}|[0-9A-F]{6})$/i)){var a=s(e)[0];return[a,a]}return[0,360]}(e.hue);return(u=o(t))<0&&(u=360+u),u}(u),f=function(e,n){if("monochrome"===n.hue)return 0;if("random"===n.luminosity)return o([0,100]);var r=function(e){return a(e).saturationRange}(e),t=r[0],u=r[1];switch(n.luminosity){case"bright":t=55;break;case"dark":t=u-10;break;case"light":u=55}return o([t,u])}(c,u),function(e,n,r){var t=function(e,n){for(var r=a(e).lowerBounds,t=0;t<r.length-1;t++){var o=r[t][0],u=r[t][1],i=r[t+1][0],s=r[t+1][1];if(n>=o&&n<=i){var l=(s-u)/(i-o),c=u-l*o;return l*n+c}}return 0}(e,n),u=100;switch(r.luminosity){case"dark":u=t+20;break;case"light":t=(u+t)/2;break;case"random":t=0,u=100}return o([t,u])}(c,f,u)],u)};function a(e){for(var r in e>=334&&e<=360&&(e-=360),n){var t=n[r];if(t.hueRange&&e>=t.hueRange[0]&&e<=t.hueRange[1])return n[r]}return"Color not found"}function o(n){if(null===e){var r=Math.random();return r+=.618033988749895,r%=1,Math.floor(n[0]+r*(n[1]+1-n[0]))}var t=n[1]||1,a=n[0]||0,o=(e=(9301*e+49297)%233280)/233280;return Math.floor(a+o*(t-a))}function u(e,r,t){var a=t[0][0],o=t[t.length-1][0],u=t[t.length-1][1],i=t[0][1];n[e]={hueRange:r,lowerBounds:t,saturationRange:[a,o],brightnessRange:[u,i]}}function i(e){var n=e[0];0===n&&(n=1),360===n&&(n=359),n/=360;var r=e[1]/100,t=e[2]/100,a=Math.floor(6*n),o=6*n-a,u=t*(1-r),i=t*(1-o*r),s=t*(1-(1-o)*r),l=256,c=256,f=256;switch(a){case 0:l=t,c=s,f=u;break;case 1:l=i,c=t,f=u;break;case 2:l=u,c=t,f=s;break;case 3:l=u,c=i,f=t;break;case 4:l=s,c=u,f=t;break;case 5:l=t,c=u,f=i}return[Math.floor(255*l),Math.floor(255*c),Math.floor(255*f)]}function s(e){e=3===(e=e.replace(/^#/,"")).length?e.replace(/(.)/g,"$1$1"):e;var n=parseInt(e.substr(0,2),16)/255,r=parseInt(e.substr(2,2),16)/255,t=parseInt(e.substr(4,2),16)/255,a=Math.max(n,r,t),o=a-Math.min(n,r,t),u=a?o/a:0;switch(a){case n:return[(r-t)/o%6*60||0,u,a];case r:return[60*((t-n)/o+2)||0,u,a];case t:return[60*((n-r)/o+4)||0,u,a]}}function l(e){var n=e[0],r=e[1]/100,t=e[2]/100,a=(2-r)*t;return[n,Math.round(r*t/(a<1?a:2-a)*1e4)/100,a/2*100]}return t}),function(){var e=!1,n=["orange","green","blue","monochrome"],r=a(function(e,n){var r=[],a=n;for(;a<n*e+n;)r.push(t(a,2*a)),a+=n;return r}(6,36));function t(e,n){return Math.floor(Math.random()*(n-e+1))+e}function a(e){for(var n,r,t=e.length;0!==t;)r=Math.floor(Math.random()*t),n=e[t-=1],e[t]=e[r],e[r]=n;return e}document.getElementById("yinyang-output").classList.add(a(["a","b"])[0]),["yinyang-output","yy-container","wrap-x","wrap-y","wrap-z","yinyang"].forEach(function(e,n){var a=document.getElementById(e);a.style.animationDuration=r[n]+"s",a.style.animationDelay=-Math.abs(t(1,r[n]))+"s"}),function r(){var o=t(13,47),u=e?0:1,i=e?1:0,s=(document.getElementById(0===i?"yin":"yang"),document.getElementById(0===u?"yin":"yang"),!t(0,1)),l=[{luminosity:"light",hue:s?a(n.concat(["purple"]))[0]:"monochrome",format:"rgba",alpha:t(63,68)/100},{luminosity:"dark",hue:s?"monochrome":a(n.concat(["red"]))[0],format:"rgba",alpha:t(68,73)/100}],c=[randomColor(l[0]),randomColor(l[1])],f=document.getElementsByClassName("yy-new"),h=t(20,80)/10;void 0!==f&&f.length&&Array.from(f).forEach(e=>{e.className="yy-old"});var d="";d+="#yinyang .head,#yinyang .tail,#yinyang #yin > div::after,#yinyang #yang > div::after {transition: background "+h+"s ease-in-out;}",d+="#yinyang #yin > div > div,#yinyang #yin > div:after {background: "+c[u]+";}",d+="#yinyang #yang > div > div,#yinyang #yang > div:after {background: "+c[i]+";}";var y=document.createElement("style");y.setAttribute("class","yy-new"),y.textContent=d,document.getElementById("yy-style").appendChild(y),setTimeout(function(){var e=document.getElementsByClassName("yy-old");void 0!==e&&e.length&&Array.from(e).forEach(e=>{e.parentNode.removeChild(e)}),r()},1e3*o)}()}(document);</script>');
+  $(domEl).find('#yinyang-output').append('<script>!function(){var t=["default","a","b","c","d","e","f","g"],n=o(function(t,n){var a=[],o=n;for(;o<n*t+n;)a.push(e(o,2*o)),o+=n;return a}(6,36)),a=[o(t)[0],o(t)[0]];function e(t,n){return Math.floor(Math.random()*(n-t+1))+t}function o(t){for(var n,a,e=t.length;0!==e;)a=Math.floor(Math.random()*e),n=t[e-=1],t[e]=t[a],t[a]=n;return t}document.getElementById("yinyang-output").classList.add(o(["a","b"])[0]),["yinyang-output","yy-container","wrap-x","wrap-y","wrap-z","yinyang"].forEach(function(t,a){var o=document.getElementById(t);o.style.animationDuration=n[a]+"s",o.style.animationDelay=-Math.abs(e(1,n[a]))+"s"}),function n(){var r=e(8,10),c=document.getElementById("yin"),u=document.getElementById("yang"),i=[!e(0,1)||!1,!e(0,1)||!1],y=[t.concat(["black"]).filter(t=>t!==a[0]),t.concat(["white"]).filter(t=>t!==a[1])];a=[i[0]?o(y[0])[0]:a[0],i[1]?o(y[1])[0]:a[1]],i[0]&&(c.className=a[0]),i[1]&&(u.className=a[1]),setTimeout(function(){n()},1e3*r)}()}(document);</script>');
