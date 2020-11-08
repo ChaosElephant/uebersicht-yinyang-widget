@@ -144,59 +144,65 @@ style: """
   border-radius: 40px;
   left: 160px; }
 
-#yinyang #yin {
-  -webkit-filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0));
-          filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0)); }
-  #yinyang #yin > div::after {
-    bottom: 60px; }
-  #yinyang #yin > div > div, #yinyang #yin > div::after {
-    background: var(--bg-color); }
-  #yinyang #yin.black {
-    -webkit-filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.9));
-            filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.9)); }
-    #yinyang #yin.black > div > div, #yinyang #yin.black > div::after {
-      background: rgba(10, 10, 10, 0.8); }
-  #yinyang #yin.a > div > div, #yinyang #yin.a > div::after {
-    background: rgba(75, 24, 24, 0.8); }
-  #yinyang #yin.b > div > div, #yinyang #yin.b > div::after {
-    background: rgba(66, 88, 59, 0.8); }
-  #yinyang #yin.c > div > div, #yinyang #yin.c > div::after {
-    background: rgba(29, 56, 58, 0.8); }
-  #yinyang #yin.d > div > div, #yinyang #yin.d > div::after {
-    background: rgba(88, 85, 35, 0.8); }
-  #yinyang #yin.e > div > div, #yinyang #yin.e > div::after {
-    background: rgba(33, 65, 58, 0.8); }
-  #yinyang #yin.f > div > div, #yinyang #yin.f > div::after {
-    background: rgba(41, 41, 41, 0.8); }
-  #yinyang #yin.g > div > div, #yinyang #yin.g > div::after {
-    background: rgba(51, 16, 16, 0.8); }
+#yinyang #yin > div::after {
+  bottom: 60px; }
 
-#yinyang #yang {
-  -webkit-filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0));
-          filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0)); }
-  #yinyang #yang > div::after {
-    top: 60px; }
-  #yinyang #yang > div > div, #yinyang #yang > div::after {
-    background: var(--bg-color); }
-  #yinyang #yang.white {
-    -webkit-filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.9));
-            filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.9)); }
-    #yinyang #yang.white > div > div, #yinyang #yang.white > div::after {
-      background: rgba(245, 245, 245, 0.8); }
-  #yinyang #yang.a > div > div, #yinyang #yang.a > div::after {
-    background: rgba(238, 37, 37, 0.8); }
-  #yinyang #yang.b > div > div, #yinyang #yang.b > div::after {
-    background: rgba(115, 232, 78, 0.8); }
-  #yinyang #yang.c > div > div, #yinyang #yang.c > div::after {
-    background: rgba(43, 182, 192, 0.8); }
-  #yinyang #yang.d > div > div, #yinyang #yang.d > div::after {
-    background: rgba(209, 196, 15, 0.8); }
-  #yinyang #yang.e > div > div, #yinyang #yang.e > div::after {
-    background: rgba(81, 236, 203, 0.8); }
-  #yinyang #yang.f > div > div, #yinyang #yang.f > div::after {
-    background: rgba(196, 202, 201, 0.8); }
-  #yinyang #yang.g > div > div, #yinyang #yang.g > div::after {
-    background: rgba(202, 146, 73, 0.8); }
+#yinyang #yin > div > div, #yinyang #yin > div::after {
+  background: var(--bg-color); }
+
+#yinyang #yin.black > div > div, #yinyang #yin.black > div::after {
+  background: rgba(10, 10, 10, 0.8); }
+
+#yinyang #yin.a > div > div, #yinyang #yin.a > div::after {
+  background: rgba(75, 24, 24, 0.8); }
+
+#yinyang #yin.b > div > div, #yinyang #yin.b > div::after {
+  background: rgba(66, 88, 59, 0.8); }
+
+#yinyang #yin.c > div > div, #yinyang #yin.c > div::after {
+  background: rgba(29, 56, 58, 0.8); }
+
+#yinyang #yin.d > div > div, #yinyang #yin.d > div::after {
+  background: rgba(88, 85, 35, 0.8); }
+
+#yinyang #yin.e > div > div, #yinyang #yin.e > div::after {
+  background: rgba(33, 65, 58, 0.8); }
+
+#yinyang #yin.f > div > div, #yinyang #yin.f > div::after {
+  background: rgba(41, 41, 41, 0.8); }
+
+#yinyang #yin.g > div > div, #yinyang #yin.g > div::after {
+  background: rgba(51, 16, 16, 0.8); }
+
+#yinyang #yang > div::after {
+  top: 60px; }
+
+#yinyang #yang > div > div, #yinyang #yang > div::after {
+  background: var(--bg-color); }
+
+#yinyang #yang.white > div > div, #yinyang #yang.white > div::after {
+  background: rgba(245, 245, 245, 0.8); }
+
+#yinyang #yang.a > div > div, #yinyang #yang.a > div::after {
+  background: rgba(238, 37, 37, 0.8); }
+
+#yinyang #yang.b > div > div, #yinyang #yang.b > div::after {
+  background: rgba(115, 232, 78, 0.8); }
+
+#yinyang #yang.c > div > div, #yinyang #yang.c > div::after {
+  background: rgba(43, 182, 192, 0.8); }
+
+#yinyang #yang.d > div > div, #yinyang #yang.d > div::after {
+  background: rgba(209, 196, 15, 0.8); }
+
+#yinyang #yang.e > div > div, #yinyang #yang.e > div::after {
+  background: rgba(81, 236, 203, 0.8); }
+
+#yinyang #yang.f > div > div, #yinyang #yang.f > div::after {
+  background: rgba(196, 202, 201, 0.8); }
+
+#yinyang #yang.g > div > div, #yinyang #yang.g > div::after {
+  background: rgba(202, 146, 73, 0.8); }
 
 #yinyang .head {
   width: 100px;
