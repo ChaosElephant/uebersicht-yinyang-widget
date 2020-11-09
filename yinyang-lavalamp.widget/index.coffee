@@ -230,7 +230,7 @@ style: """
           mask-position: 50px 0px;
   right: 100px;
   bottom: 0px;
-  height: 200.4px; }
+  height: 200.5px; }
 
 #yinyang .tail {
   -webkit-transform: translateZ(0);
