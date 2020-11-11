@@ -127,7 +127,7 @@ style: """
   height: 400px; }
 
 #yinyang {
-  opacity: 0.85; }
+  opacity: 0.92; }
   #yinyang > div > div::before,
   #yinyang > div > div::after {
     content: ""; }
