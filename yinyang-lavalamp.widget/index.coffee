@@ -100,25 +100,12 @@ style: """
               animation-duration: 70s;
       -webkit-transform: translateZ(0.0006px);
               transform: translateZ(0.0006px); }
-  #yinyang-output #yinyang {
-    -webkit-animation-duration: 80s;
-            animation-duration: 80s;
-    -webkit-animation-name: yy-rotateAllscale;
-            animation-name: yy-rotateAllscale;
-    -webkit-transform-origin: 9vmin 9vmin;
-            transform-origin: 9vmin 9vmin; }
-    #yinyang-output #yinyang > div#yin {
-      -webkit-animation: yy-yinY 65s cubic-bezier(0.6, 0, 0, 1) infinite;
-              animation: yy-yinY 65s cubic-bezier(0.6, 0, 0, 1) infinite; }
-    #yinyang-output #yinyang > div#yang {
-      -webkit-animation: yy-yangY 65s cubic-bezier(0.6, 0, 0, 1) infinite;
-              animation: yy-yangY 65s cubic-bezier(0.6, 0, 0, 1) infinite; }
   #yinyang-output.b {
     animation-direction: alternate-reverse; }
     #yinyang-output.b #yy-container,
     #yinyang-output.b #yinyang,
     #yinyang-output.b .yy-wrap {
-      animation-direction: reverse; }
+      animation-direction: alternate-reverse; }
 
 #yinyang,
 #yinyang > div,
@@ -127,7 +114,13 @@ style: """
   height: 400px; }
 
 #yinyang {
-  opacity: 0.92; }
+  opacity: 0.92;
+  -webkit-animation-duration: 80s;
+          animation-duration: 80s;
+  -webkit-animation-name: yy-rotateAllscale;
+          animation-name: yy-rotateAllscale;
+  -webkit-transform-origin: 9vmin 9vmin;
+          transform-origin: 9vmin 9vmin; }
   #yinyang > div > div::before,
   #yinyang > div > div::after {
     content: ""; }
@@ -155,9 +148,13 @@ style: """
   #yinyang #yin {
     -webkit-filter: drop-shadow(0px 0px 0px rgba(255, 255, 255, 0.9));
             filter: drop-shadow(0px 0px 0px rgba(255, 255, 255, 0.9));
-    -webkit-transform: translateZ(0.00000333);
-            transform: translateZ(0.00000333);
-    z-index: 333; }
+    -webkit-animation: yy-yinY 65s cubic-bezier(0.6, 0, 0, 1) infinite;
+            animation: yy-yinY 65s cubic-bezier(0.6, 0, 0, 1) infinite; }
+    #yinyang #yin > div {
+      right: 0px;
+      bottom: 0px;
+      -webkit-animation: yy-rotateZyi 10s linear infinite;
+              animation: yy-rotateZyi 10s linear infinite; }
     #yinyang #yin > div::before, #yinyang #yin > div::after {
       background: var(--bg-color); }
     #yinyang #yin.monochrome, #yinyang #yin.black {
@@ -180,11 +177,17 @@ style: """
     #yinyang #yin.g > div::before, #yinyang #yin.g > div::after {
       background: #3c1755; }
   #yinyang #yang {
-    -webkit-transform: translateZ(0.00000444);
-            transform: translateZ(0.00000444);
-    z-index: 444;
     -webkit-filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.9));
-            filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.9)); }
+            filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.9));
+    -webkit-animation: yy-yangY 65s cubic-bezier(0.6, 0, 0, 1) infinite;
+            animation: yy-yangY 65s cubic-bezier(0.6, 0, 0, 1) infinite; }
+    #yinyang #yang > div {
+      left: 0px;
+      top: 0px;
+      -webkit-transform: rotateZ(180deg);
+              transform: rotateZ(180deg);
+      -webkit-animation: yy-rotateZya 10s linear infinite;
+              animation: yy-rotateZya 10s linear infinite; }
     #yinyang #yang > div::before, #yinyang #yang > div::after {
       background: var(--bg-color); }
     #yinyang #yang.monochrome, #yinyang #yang.white {
@@ -206,18 +209,6 @@ style: """
       background: #c4cac9; }
     #yinyang #yang.g > div::before, #yinyang #yang.g > div::after {
       background: #ca9249; }
-  #yinyang #yin > div {
-    right: 0px;
-    bottom: 0px;
-    -webkit-animation: yy-rotateZyi 10s linear infinite;
-            animation: yy-rotateZyi 10s linear infinite; }
-  #yinyang #yang > div {
-    left: 0px;
-    top: 0px;
-    -webkit-transform: rotateZ(180deg);
-            transform: rotateZ(180deg);
-    -webkit-animation: yy-rotateZya 10s linear infinite;
-            animation: yy-rotateZya 10s linear infinite; }
 
 @-webkit-keyframes yy-rotateZyi {
   from {
