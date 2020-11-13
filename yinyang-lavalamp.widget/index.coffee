@@ -274,7 +274,7 @@ style: """
     -webkit-transform: rotateX(300deg) rotateZ(0deg) rotateY(60deg) scale3d(0.54, 0.54, 0.54);
             transform: rotateX(300deg) rotateZ(0deg) rotateY(60deg) scale3d(0.54, 0.54, 0.54); } }
 
-@-webkit-keyframes zyy-margins {
+@-webkit-keyframes yy-margins {
   0% {
     -webkit-transform: translate3d(calc(50vmin - 50vw), calc(50vmin - 50vh), 0);
             transform: translate3d(calc(50vmin - 50vw), calc(50vmin - 50vh), 0); }
@@ -282,7 +282,7 @@ style: """
     -webkit-transform: translate3d(calc(50vw - 50vmin), calc(50vh - 50vmin), 0);
             transform: translate3d(calc(50vw - 50vmin), calc(50vh - 50vmin), 0); } }
 
-@keyframes zyy-margins {
+@keyframes yy-margins {
   0% {
     -webkit-transform: translate3d(calc(50vmin - 50vw), calc(50vmin - 50vh), 0);
             transform: translate3d(calc(50vmin - 50vw), calc(50vmin - 50vh), 0); }
