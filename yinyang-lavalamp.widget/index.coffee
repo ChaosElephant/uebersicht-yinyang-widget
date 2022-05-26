@@ -9,13 +9,13 @@ style: """
 #yinyang-lavalamp-widget .x-holder,#yinyang-lavalamp-widget .y-holder,#yinyang-lavalamp-widget .z-depth,#yinyang-lavalamp-widget main{position:absolute;width:150vw;height:150vh}
 #yinyang-lavalamp-widget main{perspective:90vmax;opacity:.86;left:-25vw;top:-25vh;position:fixed}
 #yinyang-lavalamp-widget .z-depth{transform:translateZ(-90vmax)}
-#yinyang-lavalamp-widget .y-holder{animation:yinyang-lavalamp-widget-animateY 31s ease-in-out infinite alternate}
-#yinyang-lavalamp-widget .x-holder{animation:yinyang-lavalamp-widget-animateX 32s ease-in-out infinite alternate;position:relative}
+#yinyang-lavalamp-widget .y-holder{animation:yinyang-lavalamp-widget-animateY 31s infinite linear}
+#yinyang-lavalamp-widget .x-holder{animation:yinyang-lavalamp-widget-animateX 32s infinite linear;position:relative}
 #yinyang-lavalamp-widget .z-holder,#yinyang-lavalamp-widget .z-m{width:150vmin;height:150vmin;position:absolute}
 #yinyang-lavalamp-widget .z-m{animation:yinyang-lavalamp-widget-animateZm 34s ease-in-out infinite alternate}
 #yinyang-lavalamp-widget .z-holder{animation:yinyang-lavalamp-widget-animateZ 33s ease-in-out infinite alternate}
 #yinyang-lavalamp-widget .scene{width:400px;height:400px}
-#yinyang-lavalamp-widget .yinyang{width:400px;height:400px;position:relative;animation:yinyang-lavalamp-widget-yyWrap 30s ease-in-out infinite alternate}
+#yinyang-lavalamp-widget .yinyang{width:400px;height:400px;position:relative;animation:yinyang-lavalamp-widget-yyWrap 30s linear infinite}
 #yinyang-lavalamp-widget .yy,#yinyang-lavalamp-widget .yy--yang,#yinyang-lavalamp-widget .yy--yin{width:100%;height:100%;position:absolute;top:0;left:0;border-radius:50%;overflow:hidden;--td:1s}
 #yinyang-lavalamp-widget .yy--yang:after,#yinyang-lavalamp-widget .yy--yang:before,#yinyang-lavalamp-widget .yy--yin:after,#yinyang-lavalamp-widget .yy--yin:before,#yinyang-lavalamp-widget .yy:after,#yinyang-lavalamp-widget .yy:before{transition-property:background;transition-duration:var(--td);transition-timing-function:ease-in-out;background:var(--bg-color)}
 #yinyang-lavalamp-widget .yy--yang:before,#yinyang-lavalamp-widget .yy--yin:before,#yinyang-lavalamp-widget .yy:before{content:'';display:block;width:80px;height:80px;border-radius:50%;position:absolute;left:160px;top:60px}
@@ -32,11 +32,9 @@ to{transform:rotateZ(180deg)}
 100%{transform:rotateX(360deg) rotateZ(360deg) rotateY(20deg)}
 }
 @keyframes yinyang-lavalamp-widget-animateY{0%{transform:rotateY(0)}
-50%{transform:rotateY(180deg)}
 100%{transform:rotateY(360deg)}
 }
 @keyframes yinyang-lavalamp-widget-animateX{0%{transform:rotateX(0)}
-50%{transform:rotateX(180deg)}
 100%{transform:rotateX(360deg)}
 }
 @keyframes yinyang-lavalamp-widget-animateZ{0%{transform:rotateZ(0)}
@@ -75,4 +73,4 @@ render: (output) -> """
 
 update: (e, domEl) ->
 	
-  $(domEl).find('#yinyang-lavalamp-widget').append('<script>!function(){"use strict";function a(n,r){var o=s(11,21);n&&s(0,128)<=1?(clearTimeout(i.light),clearTimeout(i.dark),l[1].style="--td:6s;--bg-color:rgba(254,221,0,9.5);",l[0].style="--td:6s;--bg-color:rgba(0,87,184,9.5);",setTimeout(function(){a()},1e3*o)):["light","dark"].forEach(function(t,e){(!n||r&&t==r)&&(clearTimeout(i[t]),l[e].style="--td:"+o+"s;--bg-color:"+y(t),i[t]=setTimeout(function(){a(n,t)},1e3*o),1==e&&(n=!0))})}var t=["yinyang","y-holder","x-holder","z-holder","z-m"],i={},l=[document.getElementsByClassName("yy--yin")[0],document.getElementsByClassName("yy--yang")[0]],s=function(t,e){return Math.floor(Math.random()*(e-t+1))+t},r=function(t){for(var e,n,r=t.length;0!==r;)n=Math.floor(Math.random()*r),e=t[--r],t[r]=t[n],t[n]=e;return t}([...Array(t.length).keys()]),c=function(t){return 280<=t[0]&&t[0]<=350},u={},m=function(n){var r=!1;return Object.keys(u).forEach(t=>{var e=360<(e=u[t]+25)?e-360:e,t=(t=u[t]-25)<0?360-Math.abs(t):t;r=e<t?!(n[0]>=e&&n[0]<=t)||r:n[0]>=t&&n[0]<=e||r}),r},y=function(t,e){var n=1<=s(0,1)?s(73,91):s(73,81),r="light"==t,o=[0,360],a=s(0,17)<=3?[0,10]:r?[10,70]:[20,96],r=r?[60,95]:[10,42],o=[s(o[0],o[1]),s(a[0],a[1])+"%",s(r[0],r[1])+"%"];return c(o)||m(o)?y(t,e):(u[t]=o[0],"hsla("+o.join()+","+n/100+")")};t.forEach(function(t,e){var n;t=t,e=4*(r[e=e]+1),t=document.getElementsByClassName(t)[0].style,n=s(0,.75*(e=48+e)),t.animationDelay=-1*n+"s",t.animationDuration=e+"s",1<=s(0,1)&&(t.animationDirection="reverse")}),a()}();</script>');
+  $(domEl).find('#yinyang-lavalamp-widget').append('<script>!function(){"use strict";function a(n,r){var o=s(11,21);n&&s(0,128)<=1?(clearTimeout(i.light),clearTimeout(i.dark),l[1].style="--td:6s;--bg-color:rgba(254,221,0,9.5);",l[0].style="--td:6s;--bg-color:rgba(0,87,184,9.5);",setTimeout(function(){a()},1e3*o)):["light","dark"].forEach(function(t,e){(!n||r&&t==r)&&(clearTimeout(i[t]),l[e].style="--td:"+o+"s;--bg-color:"+y(t),i[t]=setTimeout(function(){a(n,t)},1e3*o),1==e&&(n=!0))})}var t=["yinyang","y-holder","x-holder","z-holder","z-m"],i={},l=[document.getElementsByClassName("yy--yin")[0],document.getElementsByClassName("yy--yang")[0]],s=function(t,e){return Math.floor(Math.random()*(e-t+1))+t},r=function(t){for(var e,n,r=t.length;0!==r;)n=Math.floor(Math.random()*r),e=t[--r],t[r]=t[n],t[n]=e;return t}([...Array(t.length).keys()]),c=function(t){return 280<=t[0]&&t[0]<=350},u={},m=function(n){var r=!1;return Object.keys(u).forEach(t=>{var e=360<(e=u[t]+35)?e-360:e,t=(t=u[t]-35)<0?360-Math.abs(t):t;r=e<t?!(n[0]>=e&&n[0]<=t)||r:n[0]>=t&&n[0]<=e||r}),r},y=function(t,e){var n=1<=s(0,1)?s(73,91):s(73,81),r="light"==t,o=[0,360],a=s(0,17)<=2?[2,20]:r?[10,70]:[20,84],r=r?[60,95]:[8,42],o=[s(o[0],o[1]),s(a[0],a[1])+"%",s(r[0],r[1])+"%"];return c(o)||m(o)?y(t,e):(u[t]=o[0],"hsla("+o.join()+","+n/100+")")};t.forEach(function(t,e){var n;t=t,e=5.4*(r[e=e]+1),t=document.getElementsByClassName(t)[0].style,n=s(0,.8*(e=48+e)),t.animationDelay=-1*n+"s",t.animationDuration=e+"s",1<=s(0,1)&&(t.animationDirection="reverse")}),a()}();</script>');
